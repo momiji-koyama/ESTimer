@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7477287C209E392000A0AAF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7477287B209E392000A0AAF5 /* AppDelegate.swift */; };
-		7477287E209E392000A0AAF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7477287D209E392000A0AAF5 /* ViewController.swift */; };
 		74772881209E392000A0AAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7477287F209E392000A0AAF5 /* Main.storyboard */; };
 		74772883209E392200A0AAF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74772882209E392200A0AAF5 /* Assets.xcassets */; };
 		74772886209E392200A0AAF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74772884209E392200A0AAF5 /* LaunchScreen.storyboard */; };
 		74772891209E392200A0AAF5 /* ESTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772890209E392200A0AAF5 /* ESTimerTests.swift */; };
 		7477289C209E392200A0AAF5 /* ESTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7477289B209E392200A0AAF5 /* ESTimerUITests.swift */; };
+		747728B2209E442B00A0AAF5 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747728B1209E442B00A0AAF5 /* TaskListViewController.swift */; };
+		747728B4209E445600A0AAF5 /* TimerCountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747728B3209E445600A0AAF5 /* TimerCountdownViewController.swift */; };
+		747728B6209E447D00A0AAF5 /* NewTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747728B5209E447D00A0AAF5 /* NewTaskListViewController.swift */; };
+		747728B8209E44A000A0AAF5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747728B7209E44A000A0AAF5 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		74772878209E392000A0AAF5 /* ESTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7477287B209E392000A0AAF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7477287D209E392000A0AAF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74772880209E392000A0AAF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74772882209E392200A0AAF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74772885209E392200A0AAF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		74772897209E392200A0AAF5 /* ESTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7477289B209E392200A0AAF5 /* ESTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTimerUITests.swift; sourceTree = "<group>"; };
 		7477289D209E392200A0AAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		747728B1209E442B00A0AAF5 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		747728B3209E445600A0AAF5 /* TimerCountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCountdownViewController.swift; sourceTree = "<group>"; };
+		747728B5209E447D00A0AAF5 /* NewTaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskListViewController.swift; sourceTree = "<group>"; };
+		747728B7209E44A000A0AAF5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				7477287B209E392000A0AAF5 /* AppDelegate.swift */,
-				7477287D209E392000A0AAF5 /* ViewController.swift */,
-				7477287F209E392000A0AAF5 /* Main.storyboard */,
-				74772882209E392200A0AAF5 /* Assets.xcassets */,
-				74772884209E392200A0AAF5 /* LaunchScreen.storyboard */,
+				747728AA209E3A4500A0AAF5 /* Classes */,
+				747728A9209E3A2200A0AAF5 /* Resources */,
 				74772887209E392200A0AAF5 /* Info.plist */,
 			);
 			path = ESTimer;
@@ -123,6 +127,68 @@
 				7477289D209E392200A0AAF5 /* Info.plist */,
 			);
 			path = ESTimerUITests;
+			sourceTree = "<group>";
+		};
+		747728A9209E3A2200A0AAF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74772882209E392200A0AAF5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		747728AA209E3A4500A0AAF5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				747728AB209E3A7300A0AAF5 /* Controller */,
+				747728AC209E3A8500A0AAF5 /* View */,
+				747728AE209E3AA200A0AAF5 /* Model */,
+				747728AF209E3AAF00A0AAF5 /* Config */,
+				747728B0209E3ABC00A0AAF5 /* Util */,
+			);
+			name = Classes;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		747728AB209E3A7300A0AAF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				747728B1209E442B00A0AAF5 /* TaskListViewController.swift */,
+				747728B3209E445600A0AAF5 /* TimerCountdownViewController.swift */,
+				747728B5209E447D00A0AAF5 /* NewTaskListViewController.swift */,
+				747728B7209E44A000A0AAF5 /* HistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		747728AC209E3A8500A0AAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7477287F209E392000A0AAF5 /* Main.storyboard */,
+				74772884209E392200A0AAF5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		747728AE209E3AA200A0AAF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		747728AF209E3AAF00A0AAF5 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		747728B0209E3ABC00A0AAF5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7477287E209E392000A0AAF5 /* ViewController.swift in Sources */,
 				7477287C209E392000A0AAF5 /* AppDelegate.swift in Sources */,
+				747728B4209E445600A0AAF5 /* TimerCountdownViewController.swift in Sources */,
+				747728B6209E447D00A0AAF5 /* NewTaskListViewController.swift in Sources */,
+				747728B8209E44A000A0AAF5 /* HistoryViewController.swift in Sources */,
+				747728B2209E442B00A0AAF5 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
