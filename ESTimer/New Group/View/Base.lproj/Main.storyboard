@@ -70,6 +70,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="BF4-gk-Fzk">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="jxN-QL-U4v">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="53p-YP-YYL">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="xji-Gq-V18">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cje-YO-sfh">
                                 <rect key="frame" x="313" y="7" width="46" height="30"/>
@@ -117,16 +124,75 @@
             </objects>
             <point key="canvasLocation" x="3632.8000000000002" y="-664.31784107946032"/>
         </scene>
-        <!--Timer Countdown View Controller-->
+        <!--Title-->
         <scene sceneID="ODb-Ne-rMk">
             <objects>
                 <viewController id="BSS-3b-aB4" customClass="TimerCountdownViewController" customModule="ESTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GPw-TL-cYc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zch-qI-bde">
+                                <rect key="frame" x="80.5" y="284" width="214.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5Za-ui-Ude"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMu-hb-B8a">
+                                <rect key="frame" x="80" y="404" width="215" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-qH-gNZ">
+                                        <rect key="frame" x="117.5" y="0.0" width="97.5" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.39232052926152705" blue="0.27830313798538464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rightButtonOnClicked:" destination="BSS-3b-aB4" eventType="touchUpInside" id="zW7-wn-Tfd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqH-sL-Frj">
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.39232052926152705" blue="0.27830313798538464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="leftButtonOnClicked:" destination="BSS-3b-aB4" eventType="touchUpInside" id="PHU-gr-iqU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2zq-4U-MSj"/>
+                                    <constraint firstAttribute="trailing" secondItem="fbd-qH-gNZ" secondAttribute="trailing" id="3tm-nk-zt0"/>
+                                    <constraint firstItem="tqH-sL-Frj" firstAttribute="leading" secondItem="mMu-hb-B8a" secondAttribute="leading" id="Iqs-h1-1ye"/>
+                                    <constraint firstItem="fbd-qH-gNZ" firstAttribute="height" secondItem="tqH-sL-Frj" secondAttribute="height" id="Nby-3L-f37"/>
+                                    <constraint firstItem="fbd-qH-gNZ" firstAttribute="leading" secondItem="tqH-sL-Frj" secondAttribute="trailing" constant="20" id="UVg-j1-UwY"/>
+                                    <constraint firstItem="fbd-qH-gNZ" firstAttribute="top" secondItem="mMu-hb-B8a" secondAttribute="top" id="a0I-uv-QmT"/>
+                                    <constraint firstAttribute="bottom" secondItem="fbd-qH-gNZ" secondAttribute="bottom" id="epM-6C-Jdy"/>
+                                    <constraint firstItem="fbd-qH-gNZ" firstAttribute="width" secondItem="tqH-sL-Frj" secondAttribute="width" id="qFh-ur-9zg"/>
+                                    <constraint firstItem="tqH-sL-Frj" firstAttribute="top" secondItem="mMu-hb-B8a" secondAttribute="top" id="scu-TR-L0Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="tqH-sL-Frj" secondAttribute="bottom" id="z2l-ut-cBA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.78219519394793857" blue="0.48876397391261595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mMu-hb-B8a" firstAttribute="leading" secondItem="Rvq-kE-Frg" secondAttribute="leading" constant="80" id="K6m-Gq-wka"/>
+                            <constraint firstItem="Rvq-kE-Frg" firstAttribute="trailing" secondItem="mMu-hb-B8a" secondAttribute="trailing" constant="80" id="V5V-it-huf"/>
+                            <constraint firstItem="zch-qI-bde" firstAttribute="centerX" secondItem="GPw-TL-cYc" secondAttribute="centerX" id="m7x-ra-Itn"/>
+                            <constraint firstItem="mMu-hb-B8a" firstAttribute="top" secondItem="zch-qI-bde" secondAttribute="bottom" constant="20" id="moe-HB-aXj"/>
+                            <constraint firstItem="zch-qI-bde" firstAttribute="centerY" secondItem="GPw-TL-cYc" secondAttribute="centerY" id="qXO-N7-bzD"/>
+                            <constraint firstItem="zch-qI-bde" firstAttribute="leading" secondItem="Rvq-kE-Frg" secondAttribute="leading" constant="80" id="sVE-KG-rSx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rvq-kE-Frg"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="jye-o9-PAS"/>
+                    <connections>
+                        <outlet property="leftButton" destination="tqH-sL-Frj" id="hqb-8z-0iS"/>
+                        <outlet property="rightButton" destination="fbd-qH-gNZ" id="zrr-fN-VAP"/>
+                        <outlet property="timerLabel" destination="zch-qI-bde" id="F1y-Z9-NwR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmS-jP-PIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
