@@ -13,6 +13,18 @@ enum TimerStatus: Int {
     case starting
     case pause
     case finished
+    func name() {
+        switch self {
+        case .standby:
+            print("standby")
+        case .starting:
+            print("starting")
+        case .pause:
+            print("pause")
+        case .finished:
+            print("finished")
+        }
+    }
 }
 
 class TimerCountdownViewController: UIViewController {
@@ -24,56 +36,81 @@ class TimerCountdownViewController: UIViewController {
     var timer : Timer = Timer()
     let startTime: Int = 5
     var currentTime: Int = 0
-    var timerStatus: TimerStatus = .standby
+    var timerStatus: TimerStatus = .standby {
+        didSet {
+            switch self.timerStatus {
+                case .standby:
+                    self.rightButton.setTitle("スタート", for: .normal)
+                    self.leftButton.setTitle("キャンセル", for: .normal)
+                case .starting:
+                    self.rightButton.setTitle("ストップ", for: .normal)
+                    self.leftButton.setTitle("終了", for: .normal)
+                case .pause:
+                    self.rightButton.setTitle("再開", for: .normal)
+                    self.leftButton.setTitle("終了", for: .normal)
+                case .finished:
+                    self.rightButton.isEnabled = false
+                    self.leftButton.isEnabled = false
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("aaaa")
-        self.rightButton.setTitle("開始", for: .normal)
-        self.leftButton.setTitle("キャンセル", for: .normal)
         
         
     }
     @IBAction func leftButtonOnClicked(_ sender: Any) {
+        self.timerStatus.name()
         switch self.timerStatus {
         case .standby:
-            print("standby")
             self.navigationController?.popViewController(animated: true)
         case .starting:
-            print("starting")
+            self.timerStatus = .finished
         case .pause:
-            print("pause")
+            self.timerStatus = .finished
         case .finished:
-            print("finished")
+            break
         }
+        self.timerStatus.name()
     }
     @IBAction func rightButtonOnClicked(_ sender: Any) {
+        self.timerStatus.name()
         switch self.timerStatus {
         case .standby:
-            print("standby")
+            self.currentTime = self.startTime
             self.startTimer()
+            self.timerStatus = .starting
         case .starting:
-            print("starting")
             self.timer.invalidate()
+            self.timerStatus = .pause
         case .pause:
-            print("pause")
+            self.startTimer()
+            self.timerStatus = .starting
         case .finished:
-            print("finished")
+            break
         }
+        self.timerStatus.name()
     }
     func startTimer(){
         
-        self.rightButton.setTitle("一時停止", for: .normal)
-        self.leftButton.setTitle("終了", for: .normal)
-        self.currentTime = self.startTime
+        
         self.timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-        self.timerStatus = .starting
     }
     @objc func updateTimer(){
         self.currentTime -= 1
-        self.timerLabel.text = "\(self.currentTime)"
+        
+        let hour = (self.currentTime/60) / 60
+        let minute = (self.currentTime/60) % 60
+        let second = self.currentTime % 60
+        
+        let sHour = String(format: "%02d", hour)
+        let sMinute = String(format:"%02d", minute)
+        let sSecond = String(format:"%02d", second)
+        self.timerLabel.text = "\(sHour):\(sMinute):\(sSecond)"
     }
     
 }

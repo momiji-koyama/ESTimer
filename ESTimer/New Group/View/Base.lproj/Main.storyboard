@@ -147,7 +147,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-qH-gNZ">
                                         <rect key="frame" x="117.5" y="0.0" width="97.5" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.39232052926152705" blue="0.27830313798538464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="スタート"/>
                                         <connections>
                                             <action selector="rightButtonOnClicked:" destination="BSS-3b-aB4" eventType="touchUpInside" id="zW7-wn-Tfd"/>
                                         </connections>
@@ -155,7 +155,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqH-sL-Frj">
                                         <rect key="frame" x="0.0" y="0.0" width="97.5" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.39232052926152705" blue="0.27830313798538464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="キャンセル"/>
                                         <connections>
                                             <action selector="leftButtonOnClicked:" destination="BSS-3b-aB4" eventType="touchUpInside" id="PHU-gr-iqU"/>
                                         </connections>
@@ -183,7 +183,6 @@
                             <constraint firstItem="zch-qI-bde" firstAttribute="centerX" secondItem="GPw-TL-cYc" secondAttribute="centerX" id="m7x-ra-Itn"/>
                             <constraint firstItem="mMu-hb-B8a" firstAttribute="top" secondItem="zch-qI-bde" secondAttribute="bottom" constant="20" id="moe-HB-aXj"/>
                             <constraint firstItem="zch-qI-bde" firstAttribute="centerY" secondItem="GPw-TL-cYc" secondAttribute="centerY" id="qXO-N7-bzD"/>
-                            <constraint firstItem="zch-qI-bde" firstAttribute="leading" secondItem="Rvq-kE-Frg" secondAttribute="leading" constant="80" id="sVE-KG-rSx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rvq-kE-Frg"/>
                     </view>
