@@ -191,11 +191,27 @@
                         <outlet property="leftButton" destination="tqH-sL-Frj" id="hqb-8z-0iS"/>
                         <outlet property="rightButton" destination="fbd-qH-gNZ" id="zrr-fN-VAP"/>
                         <outlet property="timerLabel" destination="zch-qI-bde" id="F1y-Z9-NwR"/>
+                        <segue destination="Mkf-IA-dQd" kind="show" identifier="toResult" id="9cz-hz-zbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmS-jP-PIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2684" y="31.934032983508249"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="l5f-ug-9lg">
+            <objects>
+                <viewController id="Mkf-IA-dQd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rD5-SW-K3g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bzW-Qq-oI0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FP-tp-zoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3633" y="32"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="vie-5i-0tq">

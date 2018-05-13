@@ -34,7 +34,7 @@ class TimerCountdownViewController: UIViewController {
     @IBOutlet weak var rightButton: UIButton!
     
     var timer : Timer = Timer()
-    let startTime: Int = 5
+    let startTime: Int = 3605
     var currentTime: Int = 0
     var timerStatus: TimerStatus = .standby {
         didSet {
@@ -107,10 +107,24 @@ class TimerCountdownViewController: UIViewController {
         let minute = (self.currentTime/60) % 60
         let second = self.currentTime % 60
         
-        let sHour = String(format: "%02d", hour)
-        let sMinute = String(format:"%02d", minute)
-        let sSecond = String(format:"%02d", second)
-        self.timerLabel.text = "\(sHour):\(sMinute):\(sSecond)"
+        let sHour = String(format: "%02d", abs(hour))
+        let sMinute = String(format:"%02d", abs(minute))
+        let sSecond = String(format:"%02d", abs(second))
+        if abs(hour) > 0 {
+            if currentTime < 0 {
+                self.timerLabel.text = "+\(sHour):\(sMinute):\(sSecond)"
+            } else {
+                self.timerLabel.text = "\(sHour):\(sMinute):\(sSecond)"
+            }
+        } else {
+            if currentTime < 0 {
+                self.timerLabel.text = "+\(sMinute):\(sSecond)"
+            } else {
+                self.timerLabel.text = "\(sMinute):\(sSecond)"
+            }
+        }
+       
+        
     }
     
 }
